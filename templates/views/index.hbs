@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/image/virus.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <div class="list">
+            <h1 class="description">Corona Virus အခြေအနေ</h1>
+            <ul>
+                <li>စုစုပေါင်းဖြစ်ပွားသူ : {{world.cases}}</li>
+                <li>စုစုပေါင်းသေဆုံးသူ : {{world.deaths}}</li>
+                <li>စုစုပေါင်းပျောင်ကင်းသူ : {{world.recovered}}</li>
+            </ul>
+        </div>
+        <div class="list">
+            <h1 class="description">Corona Virus Situration In Myanmar</h1>
+            <ul>
+                <li>စုစုပေါင်းဖြစ်ပွားသူ : {{myanmar.cases}}</li>
+                <li>စုစုပေါင်းသေဆုံးသူ : {{myanmar.deaths}}</li>
+                <li>စုစုပေါင်းပျောင်ကင်းသူ : {{myanmar.recovered}}</li>
+            </ul>
+        </div>
+        <div class="list">
+            <h1 class="description">All Countries</h1>
+            <table class="all-countries" border="1">
+                <tr>
+                    <th>Country</th>
+                    <th>Total Cases</th>
+                    <th>Today Cases</th>
+                    <th>Total Deaths</th>
+                    <th>Today Deaths</th>
+                    <th>Total Recovered</th>
+                    <th>Active Cases</th>
+                    <th>Critical</th>
+                    <th>Case Per One Million</th>
+                    <th>Death Per One Million</th>
+                    <th>Total Tests</th>
+                    <th>Test Per One Million</th>
+                </tr>
+                {{#each allCountry as |country|}}
+                <tr>
+                    <td>{{country.country}}</td>
+                    <td>{{country.cases}}</td>
+                    <td>{{country.todayCases}}</td>
+                    <td>{{country.deaths}}</td>
+                    <td>{{country.todayDeaths}}</td>
+                    <td>{{country.recovered}}</td>
+                    <td>{{country.active}}</td>
+                    <td>{{country.critical}}</td>
+                    <td>{{country.casesPerOneMillion}}</td>
+                    <td>{{country.deathsPerOneMillion}}</td>
+                    <td>{{country.totalTests}}</td>
+                    <td>{{country.testsPerOneMillion}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+    {{>footer}}
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
