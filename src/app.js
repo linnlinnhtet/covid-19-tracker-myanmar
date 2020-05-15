@@ -5,6 +5,8 @@ const async = require('async');
 const request = require('request');
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 //Define paths for config
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewPath = path.join(__dirname, '../templates/views');
@@ -100,9 +102,9 @@ app.get('*', (req, res, next) => {
         name: 'Linn Linn Htet'
     });
 })
-app.listen(3000, (err) => {
+app.listen(port, (err) => {
     if (!err) {
-        console.log('Server is running on port 3000');
+        console.log('Server is running on port ' + port);
     }
 })
 
